@@ -7,7 +7,16 @@ export const metadata = {
 
 function layout() {
   return (
-    <div>layout</div>
+    <html lang="en">
+        <body>
+            <div className="main">
+                <div className="gradient" />
+            </div>
+            <main className="app">
+                {children}
+            </main>
+        </body>
+    </html>
   )
 }
 
