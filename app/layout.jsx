@@ -5,7 +5,7 @@ export const metadata = {
     description: "Create, discover and shar AI Prompts"
 }
 
-function layout() {
+function RootLayout() {
   return (
     <html lang="en">
         <body>
@@ -20,4 +20,4 @@ function layout() {
   )
 }
 
-export default layout
+export default RootLayout
