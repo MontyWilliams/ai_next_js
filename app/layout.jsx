@@ -1,5 +1,8 @@
 import '@styles/globals.css';
 
+import Nav from '@components/Nav';
+import Provider from '@components/Provider';
+
 export const metadata = {
     title: "Prompt Maker Pro",
     description: "Create, discover and shar AI Prompts"
@@ -13,6 +16,7 @@ function RootLayout({children}) {
                 <div className="gradient" />
             </div>
             <main className="app">
+                <Nav />
                 {children}
             </main>
         </body>
