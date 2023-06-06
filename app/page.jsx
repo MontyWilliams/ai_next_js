@@ -1,5 +1,6 @@
 import React from 'react'
 import RootLayout from './layout';
+import Feed from '../components/Feed';
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
             for anyone to begin utilizing AI technology efficiently,
             competently and in a safe manner
         </p>
+        <Feed />
     </section>
   )
 }
