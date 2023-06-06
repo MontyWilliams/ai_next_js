@@ -15,6 +15,7 @@ function Nav() {
       const response = await getProviders();
       setProviders(response)
     }
+    setProviders();
   }, []);
 
   return (
