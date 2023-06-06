@@ -7,7 +7,7 @@ import {signIn, signOut, useSession, getProviders } from 'next-auth/react';
 
 function Nav() {
   const isUserLoggedIn = true
-  
+
   return (
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href="/" className="flex gap-2 flex-center">
@@ -21,9 +21,16 @@ function Nav() {
         <p className="logo_text">Prompt Mastery</p>
       </Link>
       
-      {/* Mobile Navigation */}
+      {/* Desktop Navigation */}
       <div className="sm:flex hidden">
+        {isUserLoggedIn ? (
+          <div className="flex gap-3 md:gap-5">
 
+          </div>): (
+            <>
+
+            </>
+          )}
       </div>
     </nav>
   )
