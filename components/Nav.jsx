@@ -6,7 +6,16 @@ import {signIn, signOut, useSession, getProviders } from 'next-auth/react';
 
 
 function Nav() {
-  const isUserLoggedIn = true
+  const isUserLoggedIn = false;
+
+  const [providers, setProviders] = useState(null)
+
+  useEffect(() => { // If there is no user then provider remains null
+    const setProviders = async () => {
+      const response = await getProviders();
+      setProviders(response)
+    }
+  }, []);
 
   return (
     <nav className="flex-between w-full mb-16 pt-3">
