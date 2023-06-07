@@ -12,11 +12,11 @@ function Nav() {
   const [toggleDropdown, setToggleDropdown] = useState(false)
 
   useEffect(() => { // If there is no user then provider remains null
-    const setProviders = async () => {
+    const setUpProviders = async () => {
       const response = await getProviders();
       setProviders(response)
     }
-    setProviders();
+    setUpProviders();
   }, []);
 
   return (
@@ -32,6 +32,8 @@ function Nav() {
         <p className="logo_text">Prompt Mastery</p>
       </Link>
       
+      {alert(providers)}
+
       {/* Desktop Navigation */}
       <div className="sm:flex hidden">
         {session?.user ? (
