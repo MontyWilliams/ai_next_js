@@ -26,7 +26,7 @@ function Feed() {
       const data = await response.json();
       setPosts(data);
     }
-
+    fetchPosts();
   }, []);
 
   return (
