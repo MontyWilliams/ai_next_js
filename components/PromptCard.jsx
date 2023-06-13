@@ -25,8 +25,12 @@ function PromptCard({ post, handleTagClick, handleEdit, handleDelete}) {
             <p className="font-inter text-sm text-gray-500">{post.creator.email}</p>
           </div>
         </div>
-        <div className="copy_btn" onClick={() => {}}>
+        <div className="copy_btn" onClick={() => {
+          
+        }}>
           <Image
+            width={12}
+            height={12}
             src={copied === post.prompt
             ? '/assets/icons/tick.svg'
             : '/assets/icons/copy.svg'
