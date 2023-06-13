@@ -14,9 +14,18 @@ const PromptCardList = ({ data, handleTagClick }) => ({
 
 function Feed() {
   const [ searchText, setSearchText ] = useState('')
+
   const handleSearchChange = (e) => {
 
   }
+
+  useEffect(() => {
+    effect
+    return () => {
+      cleanup
+    };
+  }, []);
+
   return (
     <section className="feed">
       <form className="relative w-full flex-center">
