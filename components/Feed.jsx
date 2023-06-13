@@ -21,11 +21,9 @@ function Feed() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      
+      response = await fetch('/api/prompt');
+      const data = await response.json();
     }
-    return () => {
-      cleanup
-    };
   }, []);
 
   return (
