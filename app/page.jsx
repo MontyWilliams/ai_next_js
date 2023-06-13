@@ -2,6 +2,8 @@ import React from 'react'
 import RootLayout from './layout';
 import Feed from '../components/Feed';
 
+
+
 function Home() {
   return (
     <section className="w-full flex-center flex-col">
