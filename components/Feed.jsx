@@ -20,7 +20,9 @@ function Feed() {
   }
 
   useEffect(() => {
-    effect
+    const fetchPosts = async () => {
+      
+    }
     return () => {
       cleanup
     };
