@@ -7,8 +7,14 @@ import { usePathname, useRouter } from 'next/navigation'
 
 
 function PromptCard({ post, handleTagClick, handleEdit, handleDelete}) {
-  const [copied, setcopied] = useState("");
+  const [copied, setCopied] = useState("");
 
+  const handleCopy = () => {
+    setCopied(post.prompt);
+    navigator.clipboard.writeText(post.prompt);
+    setTimeout(() => setCopied(""), 3000);
+  }
+  
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">
@@ -25,9 +31,7 @@ function PromptCard({ post, handleTagClick, handleEdit, handleDelete}) {
             <p className="font-inter text-sm text-gray-500">{post.creator.email}</p>
           </div>
         </div>
-        <div className="copy_btn" onClick={() => {
-          
-        }}>
+        <div className="copy_btn" onClick={handleCopy}>
           <Image
             width={12}
             height={12}
@@ -36,9 +40,12 @@ function PromptCard({ post, handleTagClick, handleEdit, handleDelete}) {
             : '/assets/icons/copy.svg'
             }
           />
-
         </div>
       </div>
+      <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
+      <p className="font-inter text-sm blue-gradient cursor-pointer"
+        onClick={() => handleTagClick && handleTagclick(post.tag)}
+      >{post.tag}</p>
     </div>
   )
 }
