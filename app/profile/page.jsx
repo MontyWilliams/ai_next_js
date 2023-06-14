@@ -32,7 +32,7 @@ function MyProfile() {
     <Profile
         name="My"
         desc="Welcome to Your personalized Page"
-        data={[]}
+        data={posts}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
     />
