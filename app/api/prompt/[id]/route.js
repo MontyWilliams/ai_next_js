@@ -29,5 +29,7 @@ export const PATCH = async (requset, { params }) => {
         await existingPrompt.save();
         
         return new Response(JSON.stringify(existingPrompt), { status: 200 })
+    } catch (error) {
+        retrun new Response("Deezam, faild to update the prompt bruh", { status: 500 })
     }
 }
