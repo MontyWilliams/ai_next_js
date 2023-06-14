@@ -18,7 +18,10 @@ function EditPrompt() {
     });
 
     useEffect(() => {
-        effect
+        const getPromptDetails = async () => {
+            const response = await fetch(`/api/prompt/${promptId}`)
+            const data = await response.json();
+        }
        
     }, [promptId]);
     
