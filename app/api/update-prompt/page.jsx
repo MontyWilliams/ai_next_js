@@ -27,8 +27,8 @@ function EditPrompt() {
                 tag: data.tag,
             })
         }
-        
-       
+
+       if(promptId) getPromptDetails();
     }, [promptId]);
     
 
