@@ -22,5 +22,10 @@ export const PATCH = async (requset, { params }) => {
 
         const existingPrompt = await Prompt.findById(params.id);
         if(!existingPrompt) return new Response("Not found bruh", { status: 404 })
+
+        existingPrompt.prompt = prompt;
+        existingPrompt.tag = tag;
+
+        await existingPrompt.save();
     }
 }
