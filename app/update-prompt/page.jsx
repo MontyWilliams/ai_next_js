@@ -39,9 +39,9 @@ function EditPrompt() {
 
         if (!prompt.id) return alert("Prompt Id not found!?")
         try {
-            const response = await fetch('/api/prompt/new',
+            const response = await fetch(`/api/prompt/'${prompt.id}`,
             {
-                method: 'POST',
+                method: 'PATCH',
                 body: JSON.stringify({
                     prompt: post.prompt,
                     userId: session?.user.id,
