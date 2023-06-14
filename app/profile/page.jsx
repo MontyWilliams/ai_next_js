@@ -17,16 +17,15 @@ function MyProfile() {
             const data = await response.json();
             setPosts(data);
         }
-        console.log(posts);
 
         if(session?.user.id) fetchPosts();
     }, [])
 
 
-    const handleEdit = (posts) => {
-      router.push(`/update-prompt?id${posts._id}`)
+    const handleEdit = (post) => {
+      router.push(`/update-prompt?id=${post.id}`)
     }
-    const handleDelete = async (posts) => {
+    const handleDelete = async (post) => {
 
     }
   return (
