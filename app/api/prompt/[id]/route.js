@@ -33,3 +33,7 @@ export const PATCH = async (requset, { params }) => {
         retrun new Response("Deezam, faild to update the prompt bruh", { status: 500 })
     }
 }
+
+export const DELETE = async (request, { params }) => {
+    
+}
