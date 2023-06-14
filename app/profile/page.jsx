@@ -6,9 +6,9 @@ import { useRouter } from 'next/navigation';
 
 import Profile from '@components/Profile';
 
-function page() {
+function MyProfile() {
     const handleEdit = () => {
-        
+
     }
     const handleDelete = async () => {
 
@@ -18,13 +18,13 @@ function page() {
         name="My"
         desc="Welcome to Your personalized Page"
         data={[]}
-        handleEdit={}
-        handleDelete={}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
     />
   )
 }
 
-export default page
+export default MyProfile
 
 
 
