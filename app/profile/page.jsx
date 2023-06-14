@@ -1,8 +1,26 @@
-import React from 'react'
+"use client"
+
+import { useState, useEffect } from 'react'
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+
+import Profile from '@components/Profile';
 
 function page() {
+    const handleEdit = () => {
+        
+    }
+    const handleDelete = async () => {
+
+    }
   return (
-    <div>page yea yea</div>
+    <Profile
+        name="My"
+        desc="Welcome to Your personalized Page"
+        data={[]}
+        handleEdit={}
+        handleDelete={}
+    />
   )
 }
 
