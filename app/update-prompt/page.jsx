@@ -9,6 +9,7 @@ function EditPrompt() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const promptId = searchParams.get('id');
+    console.log(`promptid ${promptId}`)
     
     const [submitting, setSubmitting] = useState(false);
     const [post, setPost] = useState({
@@ -18,23 +19,25 @@ function EditPrompt() {
 
     useEffect(() => {
         const getPromptDetails = async () => {
-            const response = await fetch(`/api/prompt/${promptId}`)
-            const data = await response.json();
-
-            setPost({
-                prompt: data.prompt,
-                tag: data.tag,
-            })
+          const response = await fetch(`/api/prompt/${promptId}`);
+          const data = await response.json();
+    
+          setPost({
+            prompt: data.prompt,
+            tag: data.tag,
+          })
         }
-
-       if(promptId) getPromptDetails();
-    }, [promptId]);
+    
+        if(promptId) getPromptDetails();
+      }, [promptId]);
+    
     
 
-    const EditPrompt = async (e) => {
+    const updatePrompt = async (e) => {
         e.preventDefault();
         setSubmitting(true)
 
+        if (!prompt.id) return alert("Prompt Id not found!?")
         try {
             const response = await fetch('/api/prompt/new',
             {
@@ -62,7 +65,7 @@ function EditPrompt() {
         post={post}
         setPost={setPost}
         submitting={submitting}
-        handleSubmit={() => {}}
+        handleSubmit={updatePrompt}
     />
   )
 }
