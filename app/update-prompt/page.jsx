@@ -9,7 +9,6 @@ function EditPrompt() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const promptId = searchParams.get('id');
-    console.log(`promptid ${promptId}`)
     
     const [submitting, setSubmitting] = useState(false);
     const [post, setPost] = useState({
@@ -37,9 +36,9 @@ function EditPrompt() {
         e.preventDefault();
         setSubmitting(true)
 
-        if (!prompt.id) return alert("Prompt Id not found!?")
+        if (!promptId) return alert("Prompt Id not found!?")
         try {
-            const response = await fetch(`/api/prompt/'${promptId}`,
+            const response = await fetch(`/api/prompt/${promptId}`,
             {
                 method: 'PATCH',
                 body: JSON.stringify({
