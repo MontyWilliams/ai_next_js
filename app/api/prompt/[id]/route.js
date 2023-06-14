@@ -35,5 +35,9 @@ export const PATCH = async (requset, { params }) => {
 }
 
 export const DELETE = async (request, { params }) => {
-    
+    try {
+        await connectToDB();
+
+        await Prompt.findByIdAndRemove(parmas.id);
+    }
 }
