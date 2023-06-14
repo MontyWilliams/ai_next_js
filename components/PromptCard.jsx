@@ -46,6 +46,12 @@ function PromptCard({ post, handleTagClick, handleEdit, handleDelete}) {
       <p className="font-inter text-sm blue-gradient cursor-pointer"
         onClick={() => handleTagClick && handleTagclick(post.tag)}
       >{post.tag}</p>
+      
+      {session?.user.id === post.creator.id && pahName === '/profile' && (
+        <div>
+          
+        </div>
+      )}
     </div>
   )
 }
