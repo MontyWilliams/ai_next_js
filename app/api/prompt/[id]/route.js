@@ -13,3 +13,14 @@ export const GET = async (request, { params }) => {
         return new Response("Failed to fetch all prompts", { status: 500 })
     }
 }
+
+export const PATCH = async (requset, { params }) => {
+    const { prompt, tag } = await request.json();
+
+    try {
+        await connectToDB();
+
+        const existingPrompt = await Prompt.findById(params.id);
+        
+    }
+}
