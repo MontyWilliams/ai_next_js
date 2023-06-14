@@ -27,5 +27,7 @@ export const PATCH = async (requset, { params }) => {
         existingPrompt.tag = tag;
 
         await existingPrompt.save();
+        
+        return new Response(JSON.stringify(existingPrompt), { status: 200 })
     }
 }
